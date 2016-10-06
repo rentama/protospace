@@ -1,11 +1,11 @@
 # データベースの構築
 
-##groupモデル
+##groupモデル >> product,user
 ###groupsテーブル
 
 * name(string)
 
-##productモデル
+##productモデル >> image,comment,like
 ###productsテーブル
 
 * title(string)
@@ -27,7 +27,7 @@
 * product_id(integer)
 * text(text)
 
-##userモデル
+##userモデル >> product,comment,like
 ###usersテーブル
 
 * name(string)
@@ -43,10 +43,5 @@
 * user_id(integer)
 * product_id(integer)
 
-##タグ用のテーブル(gem 'acts-as-taggable-on'によって作るテーブル)
+###タグ用のテーブル(gem 'acts-as-taggable-on'によって作るテーブル)
 
-##アソシエーションの関係
-
-* group >> product,user
-* product >> image,comment,like
-* user >> product,comment,like
