@@ -50,7 +50,7 @@
 ###imagesテーブル
 
 * product_id(integer)
-* role(string)
+* role(integer)
 * imageのダウンロードのためのgemによるカラム
 
 ###commentsテーブル
