@@ -11,34 +11,34 @@
 
 ##アソシエーション
 
-* productモデル
+### productモデル
 
 + has_many :images
 + has_many :comments
 + has_many :likes
 + balongs_to :user
 
-* imageモデル
+### imageモデル
 
 + belongs_to :product
 
-* commentモデル
+### commentモデル
 
 + belongs_to :user
 + belongs_to :product
 
-* userモデル
+### userモデル
 
 + has_many :products
 + has_many :comments
 + has_many :likes
 
-* likesモデル
+### likesモデル
 
 + balongs_to :user
 + belongs_to :product
 
-##テーブルのカラム(カラム)
+##テーブルのカラム(カラムの型)
 
 ###productsテーブル
 
