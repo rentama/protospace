@@ -1,47 +1,77 @@
-# データベースの構築
+#データベースの構築
 
-##groupモデル >> product,user
-###groupsテーブル
+##テーブル
 
-* name(string)
+* products
+* images
+* comments
+* users
+* likes
+* protoytpes_tags
 
-##productモデル >> image,comment,like
+##アソシエーション
+
+* productモデル
+
++ has_many :images
++ has_many :comments
++ has_many :likes
++ balongs_to :user
+
+* imageモデル
+
++ belongs_to :product
+
+* commentモデル
+
++ belongs_to :user
++ belongs_to :product
+
+* userモデル
+
++ has_many :products
++ has_many :comments
++ has_many :likes
+
+* likesモデル
+
++ balongs_to :user
++ belongs_to :product
+
+##テーブルのカラム(カラム)
+
 ###productsテーブル
 
 * title(string)
 * catch_copy(string)
 * concept(text)
-* group_id(integer)
 * user_id(integer)
 
-##imageモデル
 ###imagesテーブル
 
 * product_id(integer)
+* role(string)
 * imageのダウンロードのためのgemによるカラム
 
-##commentモデル
 ###commentsテーブル
 
 * user_id(integer)
 * product_id(integer)
 * text(text)
 
-##userモデル >> product,comment,like
 ###usersテーブル
 
 * name(string)
 * profile(text)
 * works(text)
-* group_id(integer)
+* group(string)
 * deviseによるカラム諸々
 * avatarを入れるのでgemによるカラム諸々
 
-##likeモデル
 ###likesテーブル
 
 * user_id(integer)
 * product_id(integer)
 
-###タグ用のテーブル(gem 'acts-as-taggable-on'によって作るテーブル)
+###protoytpes_tags
 
